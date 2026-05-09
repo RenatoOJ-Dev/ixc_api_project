@@ -230,5 +230,17 @@ ZTEGCC5BF216
 
 
 
-
-
+[
+  {
+    "TB":"su_oss_chamado.data_agenda","OP":"BE","P":"2026-05-09 00:00:00","P2":"2026-05-09 23:59:59"
+    },
+  {
+    "TB":"view_funcionarios_setor.funcionario","OP":"L","P":"RENATO"
+    },
+  {
+    "TB":"su_oss_chamado.status","OP":"IN","P":"'A','DS','AN','EX','EN','AS','RAG','AG'"
+    },
+    {
+      "TB":"su_oss_chamado.prioridade","OP":"IN","P":"'B','N','A','C'"
+      }
+      ]
