@@ -16,18 +16,21 @@ def tec_total(auth: str, url: str) -> list:
         'Authorization': auth
     }
     lista_de_tecnicos = [
-        # "RENAN GOMES",
-        # "GOBBO",
-        # "wesley",
+        "RENAN GOMES",
+        "GOBBO",
+        
         "MICHEL",
-        # "SAULO",
+        "SAULO",
+        
         "DANILO",
-        # "eder",
-        # "JHON",
-        # "marcelo",
+        "EDER",
+        
+        "JHON",
         'KEVIN',
-        'DALMO',
-        "RENATO",
+        
+        # 'DALMO',
+        
+        # "RENATO",
     ]
 
     lib_os = []

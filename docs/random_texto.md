@@ -209,38 +209,33 @@ Fak@as7348JHa
 
 ZTEGCC5BF216
 
-### FLUXO DE MENSAGEM PARA INFORMAR O CLIENTE DA IDA DO TECNICO
-  Boa tarde.
-  Eu me chamo Renato, sou do setor de tecnlogia do seu provedor de internet, NV7.
-  Tudo bem?
-  -------
-  Senhora Camile correto?
-  --------
-  Estrou entrando em contato pois tem uma visita técnica para hoje!
-  -------
-  Pela parte da manhã
-  ---
-  É possivel para a senhora o atendimento?
-  -------
-  Certo!
-  Então assim que ele estiver em encontro a sua residência, será feito uma ligação para a senhora, ou assim como fiz agora, será mandado uma mensagem no seu whatsapp, ok?
-  ------
-  Vou informa lo que fiz contato com a senhora pela manhã, e que a senhora estará disponivel!
+### SAUDAÇÃO
+Olá! Meu nome é Renato, sou do setor de tecnologia do seu provedor de internet, NV7. Tudo bem?
 
+### CONTATO ANTECIPADO
+Olá, Camile, correto?
+
+Estou entrando em contato pois existe uma visita técnica agendada para hoje no período da manhã. O atendimento nesse horário é possível para você?
+
+Certo! Assim que o técnico estiver a caminho da sua residência, faremos uma ligação ou enviaremos uma mensagem por aqui pelo WhatsApp, ok?
+
+Informarei ao técnico que o contato foi realizado pela manhã e que a disponibilidade para o atendimento foi confirmada.
+
+### INATIVIDADE NO CHAT
+Olá! Você ainda está por aqui? Gostaria de continuar nosso atendimento. 😊👋
+
+### PROBLAMAS COM CONEXÃO
+Fui informado de que está ocorrendo um problema com a conexão. Procede?
 
 
 
 [
   {
-    "TB":"su_oss_chamado.data_agenda","OP":"BE","P":"2026-05-09 00:00:00","P2":"2026-05-09 23:59:59"
-    },
-  {
-    "TB":"view_funcionarios_setor.funcionario","OP":"L","P":"RENATO"
-    },
-  {
-    "TB":"su_oss_chamado.status","OP":"IN","P":"'A','DS','AN','EX','EN','AS','RAG','AG'"
+    "TB":"su_oss_chamado.data_agenda","OP":"BE","P":"2026-05-12 00:00:00","P2":"2026-05-12 23:59:59"
     },
     {
-      "TB":"su_oss_chamado.prioridade","OP":"IN","P":"'B','N','A','C'"
-      }
-      ]
+      "TB":"view_funcionarios_setor.funcionario","OP":"L","P":"renato"},
+      {
+        "TB":"su_oss_chamado.status","OP":"IN","P":"'A','DS','AN','EX','EN','AS','RAG','AG'"
+        },
+        {"TB":"su_oss_assunto.assunto","OP":"L","P":"reparo"},{"TB":"su_oss_chamado.prioridade","OP":"IN","P":"'B','N','A','C'"}]

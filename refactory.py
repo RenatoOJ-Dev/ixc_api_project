@@ -18,14 +18,15 @@ def tec_total(auth: str, url: str) -> dict:
 
     grid_param = [
         {
-            "TB": "su_oss_chamado.data_agenda", "OP": "BE", "P": "2026-05-09 00:00:00", "P2": "2026-05-09 23:59:59"
+            "TB": "su_oss_chamado.data_agenda", "OP": "BE", "P": "2026-05-12 00:00:00", "P2": "2026-05-12 23:59:59"
         },
         {
-            "TB": "view_funcionarios_setor.funcionario", "OP": "L", "P": "RENATO"
-        },
+            "TB": "view_funcionarios_setor.funcionario", "OP": "L", "P": "renato"},
         {
             "TB": "su_oss_chamado.status", "OP": "IN", "P": "'A','DS','AN','EX','EN','AS','RAG','AG'"
         },
+        {
+            "TB": "su_oss_assunto.assunto", "OP": "L", "P": "reparo"},
         {
             "TB": "su_oss_chamado.prioridade", "OP": "IN", "P": "'B','N','A','C'"
         }
@@ -45,6 +46,7 @@ def tec_total(auth: str, url: str) -> dict:
 
 
 request = tec_total(auth, url)
-# print(type(request))
+print(type(request))
 registors = request.get('registros', '')
-
+for i in registors:
+    print(i, end='\n')

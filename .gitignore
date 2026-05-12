@@ -1,0 +1,27 @@
+# Dependências e Pacotes (Node, Python, PHP)
+node_modules/
+__pycache__/
+vendor/
+venv/
+.venv/
+venv
+.venv
+
+# Arquivos de Configuração e Chaves Secretas (Nunca envie ao Git)
+*.pem
+*.key
+
+# Pastas de Compilação e Build
+dist/
+build/
+out/
+
+# Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Pastas de IDEs e Editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
