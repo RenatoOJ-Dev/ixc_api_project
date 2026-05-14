@@ -1,0 +1,53 @@
+aneble
+
+/* Usado para mostrar todos os logins de todas os slots e todas as pons */
+display ont info summary 0
+
+
+/* Usado para mostrar todos os logins de um determinado slot */
+display ont info summary 0/*
+
+
+/* Usado para mostrar todos os logins de uma determinada pon */
+display ont info summary 0/2/*
+
+/* Entra no modo de configuracao */
+config
+
+/* Pegar o valor de um login pela descrição ( desc ) */
+display ont info by-desc < ID >
+
+/* Ver a configuracao atual do cliente */
+display current-configuration ont < placa/slot/pon valor dentro da OLT >
+
+
+/* Apagar o service-port do cliente */
+undo service-port < valor numero do service-port >
+
+/* entrar na interface gpon do cliente */
+interface gpon placa/slot
+
+/* remover a ONU do cliente */
+ont delete < pon > id da ONU
+
+/* modificar descricao de um cliente */
+ont modify 2 28 desc 16048_GUSTAVO_PAIVA_DE_OLIVEIRA
+
+/* comando para procurar equipamento para autorizar */
+display ont autofind all
+
+/* comando para autorizar acesso remoto em uma huawei */
+diagnose
+
+ont wan-access http slot/pon  id onu enable
+
+
+/* scrip para subir um equipamento */
+interface gpon 0/2
+ont add 2 8 sn-auth "5A544547D02AA8E2" omci ont-lineprofile-id 34 ont-srvprofile-id 34 desc "teste" 
+ont port native-vlan 2 8 eth 1 vlan 1431 priority 0 
+#
+[bbs-config]
+ <bbs-config>
+service-port 8841 vlan 1431 gpon 0/2/2 ont 8 gemport 94 multi-service user-vlan 1431 tag-transform translate
+
