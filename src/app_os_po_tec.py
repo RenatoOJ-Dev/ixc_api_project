@@ -28,9 +28,10 @@ def tec_total(auth: str, url: str) -> list:
         "JHON",
         'KEVIN',
         
-        # 'DALMO',
+        'DALMO',
+        'RODRIGO',
         
-        # "RENATO",
+        "RENATO",
     ]
 
     lib_os = []
