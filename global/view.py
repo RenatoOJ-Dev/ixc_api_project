@@ -31,5 +31,5 @@ if cache:
 else:
     response__body__registros__all = []  # ainda não tem dado no cache
 
-df2 = pd.DataFrame(response__body__registros__all)
-st.dataframe(df2)
+df3 = pd.DataFrame(response__body__registros__all)
+st.dataframe(df3)
