@@ -1,5 +1,5 @@
 from handle__request import handle__request
-from refactored import acess_direct_api__ex
+from get__exe__os import acess_direct_api__ex
 from streamlit_autorefresh import st_autorefresh
 from src.app_os_po_tec import tec_total
 import pandas as pd
@@ -33,3 +33,13 @@ else:
 
 df3 = pd.DataFrame(response__body__registros__all)
 st.dataframe(df3)
+
+st.subheader("QUANTIDADE DE OS FINALIZADA POR :yellow[TÉCNICO]")
+cache = r.get("reponse__finished__today")
+if cache:
+    response__body__registros__all = json.loads(cache)
+else:
+    response__body__registros__all = []  # ainda não tem dado no cache
+
+df4 = pd.DataFrame(response__body__registros__all)
+st.dataframe(df4)

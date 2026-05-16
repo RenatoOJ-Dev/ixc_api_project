@@ -481,54 +481,17 @@ Fak@as7348JHa
 ZTEGCC5BF216
 
 ### FLUXO DE MENSAGEM PARA INFORMAR O CLIENTE DA IDA DO TECNICO
-  Boa tarde.
-  Eu me chamo Renato, sou do setor de tecnlogia do seu provedor de internet, NV7.
-  Tudo bem?
-  -------
-  Senhora Camile correto?
-  --------
-  Estrou entrando em contato pois tem uma visita técnica para hoje!
-  -------
-  Pela parte da manhã
-  ---
-  É possivel para a senhora o atendimento?
-  -------
-  Certo!
-  Então assim que ele estiver em encontro a sua residência, será feito uma ligação para a senhora, ou assim como fiz agora, será mandado uma mensagem no seu whatsapp, ok?
-  ------
-  Vou informa lo que fiz contato com a senhora pela manhã, e que a senhora estará disponivel!
+Olá! Me chamo Renato, sou do setor de tecnologia da NV7. Tudo bem?
 
+Temos uma ordem de serviço em aberto para você. Gostaria de verificar sua disponibilidade para o atendimento hoje: você prefere agendar para um turno específico (manhã ou tarde) ou haverá alguém disponível no local durante o dia todo?
 
+Fico no aguardo da sua confirmação para avisar nossa equipe técnica. Lembrando que faremos um contato prévio assim que o técnico estiver se deslocando para o seu endereço.
 
-
-[
-  {
-    "TB":"su_oss_chamado.data_agenda","OP":"BE","P":"2026-05-09 00:00:00","P2":"2026-05-09 23:59:59"
-    },
-  {
-    "TB":"view_funcionarios_setor.funcionario","OP":"L","P":"RENATO"
-    },
-  {
-    "TB":"su_oss_chamado.status","OP":"IN","P":"'A','DS','AN','EX','EN','AS','RAG','AG'"
-    },
-    {
-      "TB":"su_oss_chamado.prioridade","OP":"IN","P":"'B','N','A','C'"
-      }
-      ]
 
 `MAIARA CORREA ALVES`
   FEITO 3 TENTATIVAS SE CONTATO COM A CLIENTE
   OS SERÁ FECHADA.
 
-
-
-
-EDER:
-
-
-MICHEL:
-
-JHON:
 
 
 ### MENSAGEM DE REQUERIMENTO DE IMAGENS
@@ -567,3 +530,13 @@ E sobre ir na casa nunca antes do horario agendado
 `DANIEL SANTOS GUIMARAES`
 
 
+13h > atualizar o que fizeram de manhar
+
+17h > atualizar novamente!
+
+
+5527
+
+
+
+478: para ampliar splitter de 8 para 16 por exemplo

@@ -51,7 +51,6 @@ def normalize__api__data(data__raw):
     if data__raw:
         list__items__api = [{
             'tecnico': get_nome_tecnico(data.get('id_tecnico')),
-            # 'id_tecnico': data.get('id_tecnico'),
             'id_cliente': data.get('id_cliente'),
             'id_assunto': data.get('id_assunto'),
             'endereco': data.get('endereco')
