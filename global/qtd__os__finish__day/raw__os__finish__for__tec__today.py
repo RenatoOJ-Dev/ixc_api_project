@@ -46,8 +46,8 @@ def get__os__finish__for__tec__today() -> list:
                 "TB": "su_oss_chamado.data_fechamento",
                 "display": "Fechamento",
                 "OP": "BE",
-                "P": "2026-05-15 00:00:00",
-                "P2": "2026-05-15 23:59:59",
+                "P": "2026-05-18 00:00:00",
+                "P2": "2026-05-18 23:59:59",
                 "C": "AND",
                 "G": "_su_oss_chamado.data_fechamento"
             },

@@ -43,7 +43,7 @@ def acess_direct_api() -> dict:
             "TB": "su_oss_assunto.assunto",
             "display": "Assunto",
             "OP": "L",
-            "P": "reparo",
+            "P": "ope",
             "C": "AND",
             "G": "_su_oss_assunto.assunto"
         }
