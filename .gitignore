@@ -5,6 +5,7 @@
 __pycache__
 db.sqlite3
 media
+pages/
 
 # Backup files #
 *.bak
@@ -86,6 +87,8 @@ venv.bak/
 
 # mkdocs documentation
 /site
+/docs
+docs
 
 # mypy
 .mypy_cache/

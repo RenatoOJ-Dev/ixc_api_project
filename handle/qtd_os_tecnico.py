@@ -23,7 +23,7 @@ def fetch_os_abertas_por_tecnico() -> list[dict]:
 
     for tecnico in NOMES_TECNICOS:
         try:
-            data = fetch_ixc(dict(_build_grid_param(tecnico)), rp=24)
+            data = fetch_ixc((_build_grid_param(tecnico)), rp=24)
             resultados.append({
                 "tecnico": tecnico,
                 "total": data.get("total", 0),

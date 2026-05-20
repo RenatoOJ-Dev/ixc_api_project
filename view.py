@@ -51,9 +51,18 @@ def dashboard_realtime():
         st.dataframe(pd.DataFrame(get_cache(CACHE_KEY_OS_FINALIZADAS)))
 
 
+def renan_gomes():
+    with st.container(border=True):
+        st.subheader("Renan Gomes")
+        st.dataframe()
+
+
 pages = {
     "Dashboard Real Time": [
         st.Page(dashboard_realtime, title="Dashboard", icon="📊")
+    ],
+    "Dashboard For Tecnico": [
+        st.Page('pages/renan_gomes.py', title='Renan Gomes', icon='👨')
     ]
 }
 

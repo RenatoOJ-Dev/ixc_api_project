@@ -1,7 +1,4 @@
 
-import json
-import requests
-import os
 from dotenv import load_dotenv
 from .status import get_nome_status
 from api.client import fetch_ixc
