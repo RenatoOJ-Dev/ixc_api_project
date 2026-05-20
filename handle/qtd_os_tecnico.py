@@ -21,15 +21,17 @@ def fetch_os_abertas_por_tecnico() -> list[dict]:
     """Retorna o total de OS abertas agrupado por técnico."""
     resultados = []
 
-    for tecnico in NOMES_TECNICOS:
-        try:
-            data = fetch_ixc((_build_grid_param(tecnico)), rp=24)
-            resultados.append({
-                "tecnico": tecnico,
-                "total": data.get("total", 0),
-            })
+    if NOMES_TECNICOS:
+        for tecnico in NOMES_TECNICOS:
+            try:
+                data = fetch_ixc((_build_grid_param(tecnico)), rp=24)
+                resultados.append({
+                    "tecnico": tecnico,
+                    "total": data.get("total", 0),
+                })
 
-        except Exception as e:
-            print(f'Erro ao buscar OS de {tecnico}:{e}')
-            resultados.append({"tecnico": tecnico, "total": 0})
+            except Exception as e:
+                print(f'Erro ao buscar OS de {tecnico}:{e}')
+                resultados.append({"tecnico": tecnico, "total": 0})
+        return resultados
     return resultados

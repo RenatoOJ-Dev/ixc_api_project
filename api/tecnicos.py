@@ -1,25 +1,14 @@
-# api/tecnicos.py
+import os
+from dotenv import load_dotenv
 
-TECNICOS: dict[int, str] = {
-    89: "Renan Gomes",
-    260: "Gobbo",
-    180: "Danilo",
-    181: "Eder",
-    248: "Jhon",
-    270: "Kevin",
-    294: "Rodrigo",
-    264: "Renato",
-}
+load_dotenv()
 
-NOMES_TECNICOS = [
-    "RENAN GOMES",
-    "GOBBO",
-    "DANILO",
-    "EDER",
-    "JHON",
-    "KEVIN",
-    "RODRIGO",
-]
+type Array = list
+type String = str
+
+TECNICOS: dict[int, String] = os.getenv('TECNICOS')
+
+NOMES_TECNICOS = os.getenv('NOMES_TECNICOS')
 
 
 def get_nome_tecnico(id_tecnico) -> str:

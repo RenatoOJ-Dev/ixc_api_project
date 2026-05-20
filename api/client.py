@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-def fetch_ixc(grid_param: dict, rp: int = 100) -> dict:
+def fetch_ixc(grid_param: dict | list, rp: int = 100) -> dict:
     """
     chamada base para a API do IXC. Reutilizavel por qualquer módulo.
     """
