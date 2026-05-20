@@ -1,30 +1,29 @@
 # view.py
-
-from qtd_os_exec.exe_os_get import fetch_os_em_execucao
-from renato_all_os.engine_request import get_os_renato
 from streamlit_autorefresh import st_autorefresh
 import pandas as pd
 import streamlit as st
 import redis
 import json
-import sys
-import os
-
-# fmt: off
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
-# fmt: on
+import logging
 
 
 CACHE_KEY_OS_ABERTAS = "cache:os_abertas_por_tecnico"
 CACHE_KEY_OS_FINALIZADAS = "cache:os_finalizadas_hoje"
+CACHE_KEY_OS_RENATO = "cache:os_baixa_renato"
+CACHE_KEY_OS_EXECUCAO = "cache:os_em_execucao"
 
 redis_client = redis.Redis(host="localhost", port=6379, decode_responses=True)
 
 
 def get_cache(key: str) -> list:
     """Lê uma chave do Redis e retorna lista, ou vazia se não existir."""
-    data = redis_client.get(key)
-    return json.loads(data) if data else []
+    try:
+        data = redis_client.get(key)
+        return json.loads(data) if data else []
+
+    except Exception as e:
+        logging.error(f'Erro ao acesso o Redis:{e}')
+        return []
 
 
 def dashboard_realtime():
@@ -34,13 +33,11 @@ def dashboard_realtime():
 
     with st.container(border=True):
         st.subheader("BAIXA DO TÉCNICO :blue[RENATO]")
-        os_renato = get_os_renato()
-        st.dataframe(pd.DataFrame(os_renato))
+        st.dataframe(pd.DataFrame(get_cache(CACHE_KEY_OS_RENATO)))
 
     with st.container(border=True):
         st.subheader("ORDENS DE SERVIÇO EM :violet[EXECUÇÃO]")
-        os_execucao = fetch_os_em_execucao()
-        st.dataframe(pd.DataFrame(os_execucao))
+        st.dataframe(pd.DataFrame(get_cache(CACHE_KEY_OS_EXECUCAO)))
 
     with st.container(border=True):
         st.subheader("QUANTIDADE DE OS POR :green[TÉCNICO]")
