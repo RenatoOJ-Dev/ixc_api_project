@@ -30,4 +30,12 @@ Dashboard de monitoramento de ordens de serviço dos técnicos, com atualizaçã
     ```python3 worker.py```
     ```python3 -m streamlit run view.py``` ou
     ```streamlit run view.py```
+   
+## Preview
+
+
+https://github.com/user-attachments/assets/ec952dda-022e-4440-9a91-9ee9e208989d
+
+
+
 
