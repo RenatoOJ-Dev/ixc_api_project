@@ -1,6 +1,9 @@
+# raw_os_finish_for_tec_today
+
 from datetime import date
 from api.client import fetch_ixc
 from api.tecnicos import NOMES_TECNICOS
+import logging
 
 
 def _build_grid_param(nome_tecnico: str, data: date) -> dict:
@@ -46,7 +49,7 @@ def fetch_os_finalizadas_hoje(data: date | None = None) -> list[dict]:
             resultados.append(resultado)
 
         except Exception as e:
-            print(f'Erro ao buscar OS de {tecnico}: {e}')
+            logging.error(f'Erro ao buscar OS de {tecnico}: {e}')
             resultados.append({})
 
     return resultados

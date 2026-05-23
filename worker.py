@@ -1,17 +1,27 @@
-# handle/worker.py
+# worker.py
 
-from qtd_os_finish_day.handle_os_finish_for_tec_today import get_os_finalizadas_hoje
-from handle.qtd_os_tecnico import fetch_os_abertas_por_tecnico
-from renato_all_os.engine_request import get_os_renato
-from qtd_os_exec.exe_os_get import fetch_os_em_execucao
+from os_finished_today.handle_os_finish_for_tec_today import get_os_finalizadas_hoje
+from os_by_technician.qtd_os_tecnico import fetch_os_abertas_por_tecnico
+from assigned_os.assigned_os import get_os_renato
+from os_in_execution.exe_os_get import fetch_os_em_execucao
+import logging
 import redis
 import json
 import time
+from dotenv import load_dotenv
+import os
+
+
+load_dotenv()
+
+redis_host = os.getenv('REDIS_HOST')
+redis_port = os.getenv('REDIS_PORT')
 
 CACHE_TTL = 60
 UPDATE_INTERVAL = 30
 
-redis_client = redis.Redis(host="localhost", port=6379, decode_responses=True)
+
+redis_client = redis.Redis(host=redis_host, port=redis_port, decode_responses=True)
 
 JOBS = [
     ("cache:os_abertas_por_tecnico", fetch_os_abertas_por_tecnico),
@@ -27,9 +37,9 @@ def atualiza_cache():
             try:
                 dados = fetch_fn()
                 redis_client.setex(cache_key, CACHE_TTL, json.dumps(dados))
-                print(f"✔ {cache_key} atualizado ({len(dados)} registros)")
+                logging.info(f"✔ {cache_key} atualizado ({len(dados)} registros)")
             except Exception as e:
-                print(f"✘ Erro em {cache_key}: {e}")
+                logging.error(f"✘ Erro em {cache_key}: {e}")
         time.sleep(UPDATE_INTERVAL)
 
 

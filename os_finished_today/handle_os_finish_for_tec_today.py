@@ -1,5 +1,5 @@
 from api.tecnicos import NOMES_TECNICOS
-from qtd_os_finish_day.raw_os_finish_for_tec_today import fetch_os_finalizadas_hoje
+from .raw_os_finish_for_tec_today import fetch_os_finalizadas_hoje
 
 
 def get_os_finalizadas_hoje() -> list[dict]:

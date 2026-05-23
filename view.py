@@ -5,6 +5,14 @@ import streamlit as st
 import redis
 import json
 import logging
+from dotenv import load_dotenv
+import os
+
+
+load_dotenv()
+
+redis_host = os.getenv('REDIS_HOST')
+redis_port = os.getenv('REDIS_PORT')
 
 
 CACHE_KEY_OS_ABERTAS = "cache:os_abertas_por_tecnico"
@@ -12,7 +20,7 @@ CACHE_KEY_OS_FINALIZADAS = "cache:os_finalizadas_hoje"
 CACHE_KEY_OS_RENATO = "cache:os_baixa_renato"
 CACHE_KEY_OS_EXECUCAO = "cache:os_em_execucao"
 
-redis_client = redis.Redis(host="localhost", port=6379, decode_responses=True)
+redis_client = redis.Redis(host=redis_host, port=redis_port, decode_responses=True)
 
 
 def get_cache(key: str) -> list:

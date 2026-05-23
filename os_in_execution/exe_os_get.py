@@ -1,5 +1,8 @@
+# exe_os_get.py
+
 from api.client import fetch_ixc
 from api.tecnicos import get_nome_tecnico
+import logging
 
 
 GRID_PARAM_EM_EXECUCAO = {
@@ -14,16 +17,17 @@ GRID_PARAM_EM_EXECUCAO = {
 }
 
 
-def fetch_os_em_execucao() -> list | None:
+def fetch_os_em_execucao() -> list :
     try:
         data = fetch_ixc(grid_param=GRID_PARAM_EM_EXECUCAO)
         registros = data.get('registros')
         if not registros:
-            return None
+            logging.info('Informativo, registro vazio ou não encontrado.')
+            return []
         return parse_os_execucao(registros)
     except Exception as e:
-        print(f'Erro ao buscar OS em execução: {e}')
-        return None
+        logging.error(f'Erro ao buscar OS em execução: {e}')
+        return []
 
 
 def parse_os_execucao(registros: list) -> list:

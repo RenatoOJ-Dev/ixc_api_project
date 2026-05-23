@@ -1,5 +1,8 @@
+# qtd_os_tecnico.py
+
 from api.client import fetch_ixc
 from api.tecnicos import NOMES_TECNICOS
+import logging
 
 
 def _build_grid_param(nome_tecnico: str) -> list:
@@ -31,7 +34,7 @@ def fetch_os_abertas_por_tecnico() -> list[dict]:
                 })
 
             except Exception as e:
-                print(f'Erro ao buscar OS de {tecnico}:{e}')
+                logging.error(f'Erro ao buscar OS de {tecnico}:{e}')
                 resultados.append({"tecnico": tecnico, "total": 0})
         return resultados
     return resultados
